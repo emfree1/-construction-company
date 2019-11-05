@@ -1,5 +1,5 @@
-let title = document.getElementsByName("accordion-title");
-let cont = document.getElementsByName("accordion-cont");
+let title = document.getElementsByClassName("accordion-title");
+let cont = document.getElementsByClassName("accordion-cont");
 
 for (let i = 0; i < title.length; i++) {
     let curTitle = title[i];
