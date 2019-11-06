@@ -2,27 +2,13 @@ let title = document.getElementsByClassName("accordion-title");
 let cont = document.getElementsByClassName("accordion-cont");
 
 for (let i = 0; i < title.length; i++) {
-    let curTitle = title[i];
-    title[i].addEventListener('click', function () {
-        let classes = this.getAttribute('class');
-        let newClasses = '';
-        let classesArr = classes.split(' ');
-        let newClassesArr = classes.split(' ');
-        for (let j = 0; j < classes.length; j++) {
-            
-            if(classesArr[j] == 'active'){
-                classesArr.splice([j], 1);
+    title[i].addEventListener('click', function(){
+        if(!(this.classList.contains('active'))){
+            for (let i = 0; i < title.length; i++) {
+                title[i].classList.remove('active');
             }
-            
+            this.classList.add('active');
         }
-        if (classesArr.length === newClassesArr.length) {
-            classesArr.push('active');
-            newClasses = classesArr.join('');
-            
-        }else{
-            newClasses = classesArr.join('');
-        }
-        this.setAttribute('class', newClasses);
     })
     
     
